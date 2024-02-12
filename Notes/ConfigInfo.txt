@@ -1,0 +1,5 @@
+ConfigInfo.txt
+
+There is added a new configuration called "Notes-release" as a Release configuration.
+
+Notifications about the debug configuration will not be sent to the console during release configuration. Debug configuration messages help developers better understand where code is currently running. They are not needed for the release version.

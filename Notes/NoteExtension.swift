@@ -21,14 +21,13 @@ extension Note {
             var g: CGFloat = 0
             var b: CGFloat = 0
             var a: CGFloat = 0
-            let tint = color.getRed(&r, green: &g, blue: &b, alpha: &a)
+            let _ = color.getRed(&r, green: &g, blue: &b, alpha: &a)
             
             let red = Int(r * 255.0)
             let green = Int(g * 255.0)
             let blue = Int(b * 255.0)
             
             let colorStr = String(format: "#%02X%02X%02X", red, green, blue)
-//            print(colorStr)
             jsonResult["color"] = colorStr
         }
         
