@@ -4,7 +4,7 @@
 target 'Notes' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'CocoaLumberjack'
+  pod 'CocoaLumberjack/Swift'
 
   # Pods for Notes
 
