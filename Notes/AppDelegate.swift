@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DDLog.add(DDOSLogger.sharedInstance) // Uses os_log
         DDLogDebug("Function: \(#function)")
 
+#if DEBUG
+        print("It's a debug configuration")
+#endif
         return true
     }
     
