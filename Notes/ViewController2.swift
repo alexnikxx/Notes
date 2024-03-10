@@ -17,6 +17,7 @@ class ViewController2: UIViewController {
         }
     }
         
+    @IBOutlet weak var dateSwitch: UISwitch!
     @IBOutlet weak var noteTitleField: UITextField!
     
     @IBOutlet weak var dataPicker: UIDatePicker!
@@ -42,10 +43,6 @@ class ViewController2: UIViewController {
         forthColor.layer.borderWidth = 1.5
         forthColor.layer.borderColor = UIColor.black.cgColor
         
-        if noteTitleField.state.isEmpty {
-            noteTitleField.placeholder = "Enter title for you note"
-        }
+        noteTitleField.placeholder = "Enter title for you note"
     }
-
-
 }
