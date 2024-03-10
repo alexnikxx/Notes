@@ -108,10 +108,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F7n-Ov-POc">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7n-Ov-POc">
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ial-a6-RMv" userLabel="Content View">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ial-a6-RMv" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uiu-ei-g5v">
@@ -219,6 +219,7 @@
                                     <constraint firstItem="ial-a6-RMv" firstAttribute="top" secondItem="GEW-Tm-v5f" secondAttribute="top" id="7MI-1W-VNs"/>
                                     <constraint firstItem="ial-a6-RMv" firstAttribute="width" secondItem="8mo-bt-dJ3" secondAttribute="width" id="Afp-W5-S4d"/>
                                     <constraint firstItem="ial-a6-RMv" firstAttribute="trailing" secondItem="GEW-Tm-v5f" secondAttribute="trailing" id="kxK-9e-o7R"/>
+                                    <constraint firstItem="ial-a6-RMv" firstAttribute="bottom" secondItem="8mo-bt-dJ3" secondAttribute="bottom" id="lJG-SC-Q8O"/>
                                     <constraint firstItem="ial-a6-RMv" firstAttribute="bottom" secondItem="GEW-Tm-v5f" secondAttribute="bottom" id="pj3-hj-Xld"/>
                                     <constraint firstItem="ial-a6-RMv" firstAttribute="leading" secondItem="GEW-Tm-v5f" secondAttribute="leading" id="srE-fH-qlW"/>
                                 </constraints>
