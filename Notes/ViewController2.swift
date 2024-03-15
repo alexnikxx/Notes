@@ -8,7 +8,8 @@
 import UIKit
 
 class ViewController2: UIViewController {
-
+    var checkbox = CheckboxView()
+    
     @IBAction func switchChanged(_ sender: UISwitch) {
         if (sender.isOn == true) {
             dataPicker.isHidden = false
@@ -44,5 +45,16 @@ class ViewController2: UIViewController {
         forthColor.layer.borderColor = UIColor.black.cgColor
         
         noteTitleField.placeholder = "Enter title for you note"
+        
+        
+        thirdColor.addSubview(checkbox)
+        
+        let newXPosition = checkbox.frame.origin.x + 36
+        let newYPosition = checkbox.frame.origin.y + 4
+        
+        checkbox.frame.size.height = 28
+        checkbox.frame.size.width = 28
+        checkbox.backgroundColor = .clear
+        checkbox.frame = CGRect(x: newXPosition, y: newYPosition, width: checkbox.frame.size.width, height: checkbox.frame.size.height)
     }
 }

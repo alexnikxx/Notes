@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A53DEDA2BA20A2C00F3AAC9 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A53DED92BA20A2C00F3AAC9 /* CheckboxView.swift */; };
 		2A7CDCD12B66D11E00492A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CDCD02B66D11E00492A41 /* AppDelegate.swift */; };
 		2A7CDCD32B66D11E00492A41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CDCD22B66D11E00492A41 /* SceneDelegate.swift */; };
 		2A7CDCD52B66D11E00492A41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CDCD42B66D11E00492A41 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		1A773736DAE9E74F2F475391 /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
+		2A53DED92BA20A2C00F3AAC9 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		2A7CDCCD2B66D11E00492A41 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7CDCD02B66D11E00492A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A7CDCD22B66D11E00492A41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				2A7CDCE82B66D3F200492A41 /* Color.swift */,
 				2A7CDCE62B66D3BE00492A41 /* NoteExtension.swift */,
 				2A7CDCD62B66D11E00492A41 /* Main.storyboard */,
+				2A53DED92BA20A2C00F3AAC9 /* CheckboxView.swift */,
 				2A7CDCD92B66D11F00492A41 /* Assets.xcassets */,
 				2A7CDCDB2B66D11F00492A41 /* LaunchScreen.storyboard */,
 				2A7CDCDE2B66D11F00492A41 /* Info.plist */,
@@ -226,6 +229,7 @@
 			files = (
 				2A7CDCE72B66D3BE00492A41 /* NoteExtension.swift in Sources */,
 				2A7CDCEB2B66D40E00492A41 /* UIColorExtension.swift in Sources */,
+				2A53DEDA2BA20A2C00F3AAC9 /* CheckboxView.swift in Sources */,
 				2AC346BB2B9D09CD00BC869B /* ViewController2.swift in Sources */,
 				2A7CDCD52B66D11E00492A41 /* ViewController.swift in Sources */,
 				2A7CDCD12B66D11E00492A41 /* AppDelegate.swift in Sources */,
