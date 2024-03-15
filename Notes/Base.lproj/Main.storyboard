@@ -164,34 +164,50 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOR-qE-M3R">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="70" id="JWb-TP-Zq2"/>
                                                             <constraint firstAttribute="width" constant="70" id="qiz-mT-eqo"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="XL2-pl-Fej" appends="YES" id="R6M-P3-QC3"/>
+                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efi-eh-fNW">
                                                         <rect key="frame" x="74" y="0.0" width="70" height="70"/>
                                                         <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="8wu-Wj-Wqz"/>
                                                             <constraint firstAttribute="height" constant="70" id="wZk-QB-HZx"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="of4-sp-00N" appends="YES" id="ZrN-Ju-IGz"/>
+                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97A-q9-XgW">
                                                         <rect key="frame" x="148" y="0.0" width="70" height="70"/>
                                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="Llk-ug-egM"/>
                                                             <constraint firstAttribute="height" constant="70" id="cMP-Vn-hP2"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="LnI-MC-pVX" appends="YES" id="Gf4-pS-LxM"/>
+                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJj-Gw-Hsb">
                                                         <rect key="frame" x="222" y="0.0" width="70" height="70"/>
                                                         <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="HGr-XM-mPp"/>
                                                             <constraint firstAttribute="height" constant="70" id="qgF-0M-VOZ"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="Ewk-in-Hjf" appends="YES" id="SDB-cu-1hK"/>
+                                                        </connections>
                                                     </view>
                                                 </subviews>
                                                 <constraints>
@@ -248,6 +264,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWu-fu-eIh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="LnI-MC-pVX">
+                    <connections>
+                        <action selector="thirdColorTapped:" destination="HL1-Kd-hSh" id="Mzs-8n-O4Q"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="of4-sp-00N">
+                    <connections>
+                        <action selector="secondColorTapped:" destination="HL1-Kd-hSh" id="HfK-YZ-0yA"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="XL2-pl-Fej">
+                    <connections>
+                        <action selector="firstColorTapped:" destination="HL1-Kd-hSh" id="Mg6-Gf-4Tz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Ewk-in-Hjf">
+                    <connections>
+                        <action selector="forthColorTapped:" destination="HL1-Kd-hSh" id="fKT-Bo-dDf"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1052.6717557251909" y="3.5211267605633805"/>
         </scene>

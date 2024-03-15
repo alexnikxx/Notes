@@ -29,6 +29,23 @@ class ViewController2: UIViewController {
     @IBOutlet weak var thirdColor: UIView!
     @IBOutlet weak var forthColor: UIView!
     
+    @IBAction func firstColorTapped(_ sender: UITapGestureRecognizer) {
+        firstColor.addSubview(checkbox)
+    }
+    
+    @IBAction func secondColorTapped(_ sender: UITapGestureRecognizer) {
+        secondColor.addSubview(checkbox)
+    }
+    
+    @IBAction func thirdColorTapped(_ sender: UITapGestureRecognizer) {
+        thirdColor.addSubview(checkbox)
+    }
+    
+    @IBAction func forthColorTapped(_ sender: UITapGestureRecognizer) {
+        forthColor.addSubview(checkbox)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -47,7 +64,7 @@ class ViewController2: UIViewController {
         noteTitleField.placeholder = "Enter title for you note"
         
         
-        thirdColor.addSubview(checkbox)
+        firstColor.addSubview(checkbox)
         
         let newXPosition = checkbox.frame.origin.x + 36
         let newYPosition = checkbox.frame.origin.y + 4
