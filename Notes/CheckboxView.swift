@@ -7,12 +7,11 @@
 
 import UIKit
 
-class CheckboxView: UIView {
-    var shapePosition: CGPoint = .zero
+final class CheckboxView: UIView {
+    private var shapePosition: CGPoint = .zero
     var shapeSize: CGSize = CGSize(width: 28, height: 28)
     
     override func draw(_ rect: CGRect) {
-        super.draw(rect)
         let path = getCheckboxPath(in: CGRect(origin: shapePosition, size: shapeSize))
         path.lineWidth = 1.5
         path.stroke()
@@ -22,11 +21,13 @@ class CheckboxView: UIView {
         let halfSize: CGFloat = min(bounds.size.width / 2, bounds.size.height / 2)
         let desiredLineWidth: CGFloat = 4 // your desired value
         
-        let circle = UIBezierPath(arcCenter: CGPoint(x: halfSize, y: halfSize),
-                                radius: CGFloat(halfSize - (desiredLineWidth / 2)),
-                                startAngle: CGFloat(0),
-                                endAngle: CGFloat(CGFloat.pi * 2),
-                                clockwise: true)
+        let circle = UIBezierPath(
+            arcCenter: CGPoint(x: halfSize, y: halfSize),
+            radius: CGFloat(halfSize - (desiredLineWidth / 2)),
+            startAngle: CGFloat(0),
+            endAngle: CGFloat(CGFloat.pi * 2),
+            clockwise: true
+        )
         circle.close()
         
         let check = UIBezierPath()

@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
-    var checkbox = CheckboxView()
+final class ViewController2: UIViewController {
+    private var checkbox = CheckboxView()
     
     @IBAction func switchChanged(_ sender: UISwitch) {
         if (sender.isOn == true) {
@@ -45,33 +45,20 @@ class ViewController2: UIViewController {
         forthColor.addSubview(checkbox)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        firstColor.layer.borderWidth = 1.5
-        firstColor.layer.borderColor = UIColor.black.cgColor
-        
-        secondColor.layer.borderWidth = 1.5
-        secondColor.layer.borderColor = UIColor.black.cgColor
-        
-        thirdColor.layer.borderWidth = 1.5
-        thirdColor.layer.borderColor = UIColor.black.cgColor
-        
-        forthColor.layer.borderWidth = 1.5
-        forthColor.layer.borderColor = UIColor.black.cgColor
+        let colorViews: [UIView] = [firstColor, secondColor, thirdColor, forthColor]
+        colorViews.forEach { color in
+             color.layer.borderWidth = 1.5
+             color.layer.borderColor = UIColor.black.cgColor
+        }
         
         noteTitleField.placeholder = "Enter title for you note"
         
-        
         firstColor.addSubview(checkbox)
-        
-        let newXPosition = checkbox.frame.origin.x + 36
-        let newYPosition = checkbox.frame.origin.y + 4
-        
-        checkbox.frame.size.height = 28
-        checkbox.frame.size.width = 28
+      
         checkbox.backgroundColor = .clear
-        checkbox.frame = CGRect(x: newXPosition, y: newYPosition, width: checkbox.frame.size.width, height: checkbox.frame.size.height)
+        checkbox.frame = CGRect(x: 36, y: 4, width: 28, height: 28)
     }
 }
