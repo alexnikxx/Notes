@@ -8,8 +8,8 @@
 import UIKit
 
 final class CheckboxView: UIView {
-    private var shapePosition: CGPoint = .zero
-    var shapeSize: CGSize = CGSize(width: 28, height: 28)
+    private let shapePosition: CGPoint = .zero
+    private let shapeSize: CGSize = CGSize(width: 28, height: 28)
     
     override func draw(_ rect: CGRect) {
         let path = getCheckboxPath(in: CGRect(origin: shapePosition, size: shapeSize))
