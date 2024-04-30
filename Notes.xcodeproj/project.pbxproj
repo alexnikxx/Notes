@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A53DEDA2BA20A2C00F3AAC9 /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A53DED92BA20A2C00F3AAC9 /* CheckboxView.swift */; };
 		2A7CDCD12B66D11E00492A41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CDCD02B66D11E00492A41 /* AppDelegate.swift */; };
 		2A7CDCD32B66D11E00492A41 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CDCD22B66D11E00492A41 /* SceneDelegate.swift */; };
 		2A7CDCD52B66D11E00492A41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CDCD42B66D11E00492A41 /* ViewController.swift */; };
@@ -18,11 +19,13 @@
 		2A7CDCE92B66D3F200492A41 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CDCE82B66D3F200492A41 /* Color.swift */; };
 		2A7CDCEB2B66D40E00492A41 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CDCEA2B66D40E00492A41 /* UIColorExtension.swift */; };
 		2A7CDCED2B66D43B00492A41 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CDCEC2B66D43B00492A41 /* FileNotebook.swift */; };
+		2AC346BB2B9D09CD00BC869B /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC346BA2B9D09CD00BC869B /* ViewController2.swift */; };
 		911EE36691CB6231410581E5 /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9FDD70EC3DB82FEEBAFBD8 /* Pods_Notes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A773736DAE9E74F2F475391 /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
+		2A53DED92BA20A2C00F3AAC9 /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		2A7CDCCD2B66D11E00492A41 /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7CDCD02B66D11E00492A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A7CDCD22B66D11E00492A41 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		2A7CDCE82B66D3F200492A41 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		2A7CDCEA2B66D40E00492A41 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		2A7CDCEC2B66D43B00492A41 /* FileNotebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
+		2AC346BA2B9D09CD00BC869B /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		DA9FDD70EC3DB82FEEBAFBD8 /* Pods_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD6F9ED838BB2105D3FEFF0 /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,10 +91,12 @@
 				2A7CDCD42B66D11E00492A41 /* ViewController.swift */,
 				2A7CDCE42B66D35000492A41 /* Note.swift */,
 				2A7CDCEA2B66D40E00492A41 /* UIColorExtension.swift */,
+				2AC346BA2B9D09CD00BC869B /* ViewController2.swift */,
 				2A7CDCEC2B66D43B00492A41 /* FileNotebook.swift */,
 				2A7CDCE82B66D3F200492A41 /* Color.swift */,
 				2A7CDCE62B66D3BE00492A41 /* NoteExtension.swift */,
 				2A7CDCD62B66D11E00492A41 /* Main.storyboard */,
+				2A53DED92BA20A2C00F3AAC9 /* CheckboxView.swift */,
 				2A7CDCD92B66D11F00492A41 /* Assets.xcassets */,
 				2A7CDCDB2B66D11F00492A41 /* LaunchScreen.storyboard */,
 				2A7CDCDE2B66D11F00492A41 /* Info.plist */,
@@ -114,6 +120,7 @@
 			buildConfigurationList = 2A7CDCE12B66D11F00492A41 /* Build configuration list for PBXNativeTarget "Notes" */;
 			buildPhases = (
 				740BB593D72DC784FB2282C9 /* [CP] Check Pods Manifest.lock */,
+				2A2D2A272BC32FA700A28421 /* SwiftLint */,
 				2A7CDCC92B66D11E00492A41 /* Sources */,
 				2A7CDCCA2B66D11E00492A41 /* Frameworks */,
 				2A7CDCCB2B66D11E00492A41 /* Resources */,
@@ -175,6 +182,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2A2D2A272BC32FA700A28421 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		646C98E39A7FFE5DF578B461 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,6 +248,8 @@
 			files = (
 				2A7CDCE72B66D3BE00492A41 /* NoteExtension.swift in Sources */,
 				2A7CDCEB2B66D40E00492A41 /* UIColorExtension.swift in Sources */,
+				2A53DEDA2BA20A2C00F3AAC9 /* CheckboxView.swift in Sources */,
+				2AC346BB2B9D09CD00BC869B /* ViewController2.swift in Sources */,
 				2A7CDCD52B66D11E00492A41 /* ViewController.swift in Sources */,
 				2A7CDCD12B66D11E00492A41 /* AppDelegate.swift in Sources */,
 				2A7CDCD32B66D11E00492A41 /* SceneDelegate.swift in Sources */,
