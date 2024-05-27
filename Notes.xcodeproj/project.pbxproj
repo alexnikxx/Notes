@@ -93,13 +93,10 @@
 				2A7CDCD02B66D11E00492A41 /* AppDelegate.swift */,
 				2A7CDCD22B66D11E00492A41 /* SceneDelegate.swift */,
 				2AD5E9F02C04C0E800B694D8 /* ListOfNotes */,
-				2A7CDCE42B66D35000492A41 /* Note.swift */,
 				2A7CDCD42B66D11E00492A41 /* ViewController.swift */,
 				2A7CDCEA2B66D40E00492A41 /* UIColorExtension.swift */,
 				2AC346BA2B9D09CD00BC869B /* ViewController2.swift */,
-				2A7CDCEC2B66D43B00492A41 /* FileNotebook.swift */,
-				2A7CDCE82B66D3F200492A41 /* Color.swift */,
-				2A7CDCE62B66D3BE00492A41 /* NoteExtension.swift */,
+				2AD5E9F32C04D3C800B694D8 /* Models */,
 				2A7CDCD62B66D11E00492A41 /* Main.storyboard */,
 				2A53DED92BA20A2C00F3AAC9 /* CheckboxView.swift */,
 				2A7CDCD92B66D11F00492A41 /* Assets.xcassets */,
@@ -116,6 +113,17 @@
 				2AD5E9F12C04C3DE00B694D8 /* SecondTabViewController.swift */,
 			);
 			path = ListOfNotes;
+			sourceTree = "<group>";
+		};
+		2AD5E9F32C04D3C800B694D8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A7CDCE42B66D35000492A41 /* Note.swift */,
+				2A7CDCE62B66D3BE00492A41 /* NoteExtension.swift */,
+				2A7CDCEC2B66D43B00492A41 /* FileNotebook.swift */,
+				2A7CDCE82B66D3F200492A41 /* Color.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		747F202EB15BC05A869B7DBA /* Frameworks */ = {
