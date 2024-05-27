@@ -18,7 +18,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         DDLogDebug("Function: \(#function)")
 
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+
+        let tabBar = UITabBarController()
+        let firstTabViewController = FirstTabViewController()
+        let navigation = UINavigationController(rootViewController: firstTabViewController)
+        navigation.tabBarItem = UITabBarItem(title: "Галерея", image: UIImage(systemName: "square.fill"), selectedImage: nil)
+        let secondTabViewController = SecondTabViewController()
+        secondTabViewController.tabBarItem = UITabBarItem(title: "Заметки", image: UIImage(systemName: "square.fill"), selectedImage: nil)
+        tabBar.viewControllers = [navigation, secondTabViewController]
+
+        window.rootViewController = tabBar
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
