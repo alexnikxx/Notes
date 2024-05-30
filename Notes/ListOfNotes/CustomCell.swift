@@ -29,6 +29,7 @@ final class CustomCell: UITableViewCell {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .body)
         label.textColor = .gray
+        label.numberOfLines = 3
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -50,17 +51,18 @@ final class CustomCell: UITableViewCell {
         NSLayoutConstraint.activate([
             color.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
             color.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            color.trailingAnchor.constraint(equalTo: title.leadingAnchor, constant: -12),
             color.heightAnchor.constraint(equalToConstant: 20),
             color.widthAnchor.constraint(equalTo: color.heightAnchor),
-            color.centerXAnchor.constraint(equalTo: title.centerXAnchor),
+            color.centerYAnchor.constraint(equalTo: title.centerYAnchor),
 
             title.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
             title.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor),
+            title.leadingAnchor.constraint(equalTo: color.trailingAnchor, constant: 8),
 
-            text.topAnchor.constraint(equalTo: color.bottomAnchor, constant: 12),
+            text.topAnchor.constraint(equalTo: color.bottomAnchor, constant: 4),
             text.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor),
-            text.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor)
+            text.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor),
+            text.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
         ])
     }
 

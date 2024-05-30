@@ -25,7 +25,6 @@ final class FirstTabViewController: UIViewController {
 
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = UITableView.automaticDimension
 
         setupView()
     }
@@ -57,5 +56,13 @@ extension FirstTabViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Prototype Cells"
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController2ID") as? ViewController2 {
+            self.navigationController?.pushViewController(viewController, animated: true)
+            tableView.deselectRow(at: indexPath, animated: false)
+        }
     }
 }

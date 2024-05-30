@@ -103,7 +103,7 @@
         <!--View Controller2-->
         <scene sceneID="FUU-EZ-FdY">
             <objects>
-                <viewController id="HL1-Kd-hSh" customClass="ViewController2" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController2ID" id="HL1-Kd-hSh" customClass="ViewController2" customModule="Notes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JAk-Qc-gKr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
