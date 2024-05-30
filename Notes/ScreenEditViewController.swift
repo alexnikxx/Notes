@@ -7,9 +7,11 @@
 
 import UIKit
 
-final class ViewController2: UIViewController {
+final class ScreenEditViewController: UIViewController {
     var checkbox = CheckboxView()
     var note: Note?
+    var colorChoice: UIView?
+    weak var delegate: ScreenEditViewControllerDelegate?
 
     @IBOutlet weak var dateSwitch: UISwitch!
     @IBOutlet weak var noteTitleField: UITextField!
@@ -24,18 +26,22 @@ final class ViewController2: UIViewController {
 
     @IBAction func firstColorTapped(_ sender: UITapGestureRecognizer) {
         firstColor.addSubview(checkbox)
+        colorChoice = firstColor
     }
 
     @IBAction func secondColorTapped(_ sender: UITapGestureRecognizer) {
         secondColor.addSubview(checkbox)
+        colorChoice = secondColor
     }
 
     @IBAction func thirdColorTapped(_ sender: UITapGestureRecognizer) {
         thirdColor.addSubview(checkbox)
+        colorChoice = thirdColor
     }
 
     @IBAction func forthColorTapped(_ sender: UITapGestureRecognizer) {
         forthColor.addSubview(checkbox)
+        colorChoice = forthColor
     }
 
     @IBAction func switchChanged(_ sender: UISwitch) {
@@ -55,6 +61,8 @@ final class ViewController2: UIViewController {
             color.layer.borderColor = UIColor.black.cgColor
         }
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", image: nil, target: self, action: #selector(buttonSaveTapped))
+
         noteTitleField.placeholder = "Enter title for you note"
 
         firstColor.addSubview(checkbox)
@@ -64,6 +72,14 @@ final class ViewController2: UIViewController {
 
         guard let note = note else { return }
         editingNote(note: note)
+    }
+
+    @objc private func buttonSaveTapped() {
+        note = Note(uid: nil, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: setColor(), importance: .normal, selfDestructionDate: dataPicker.date)
+        if let note = note {
+            delegate?.saveNote(note: note)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 
     private func editingNote(note: Note) {
@@ -89,6 +105,18 @@ final class ViewController2: UIViewController {
             thirdColor.addSubview(checkbox)
         } else {
             forthColor.addSubview(checkbox)
+        }
+    }
+
+    private func setColor() -> UIColor {
+        if colorChoice == firstColor {
+            return .cyan
+        } else if colorChoice == secondColor {
+            return .red
+        } else if colorChoice == thirdColor {
+            return .yellow
+        } else {
+            return .blue
         }
     }
 }

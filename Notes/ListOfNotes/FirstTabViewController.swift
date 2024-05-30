@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class FirstTabViewController: UIViewController {
-    let notes = Note.allNotes
+final class FirstTabViewController: UIViewController, ScreenEditViewControllerDelegate {
+    let notebook = FileNotebook()
 
     private var tableView: UITableView = {
         let tableView = UITableView()
@@ -31,6 +31,13 @@ final class FirstTabViewController: UIViewController {
         setupView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+
     private func setupView() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -42,23 +49,30 @@ final class FirstTabViewController: UIViewController {
 
     @objc func plusButtonTapped() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController2ID") as? ViewController2 {
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "ScreenEditViewControllerID") as? ScreenEditViewController {
+            viewController.delegate = self
             self.navigationController?.pushViewController(viewController, animated: true)
         }
+    }
+
+    func saveNote(note: Note) {
+        notebook.add(note)
+        print("Note saved: \(note.title)")
+        print(notebook.notes)
     }
 }
 
 extension FirstTabViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return notes.count
+        return notebook.notes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as? CustomCell else {
             fatalError("The TableView could not dequeue a CustomCell in FirstTabViewController")
         }
-        let note = notes[indexPath.row]
+        let note = notebook.notes[indexPath.row]
         cell.updateCell(note: note)
         return cell
     }
@@ -69,8 +83,8 @@ extension FirstTabViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController2ID") as? ViewController2 {
-            let note = notes[indexPath.row]
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "ScreenEditViewControllerID") as? ScreenEditViewController {
+            let note = notebook.notes[indexPath.row]
             viewController.note = note
             self.navigationController?.pushViewController(viewController, animated: true)
             tableView.deselectRow(at: indexPath, animated: false)
