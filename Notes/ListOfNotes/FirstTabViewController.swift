@@ -12,6 +12,8 @@ final class FirstTabViewController: UIViewController {
 
     private var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.allowsSelection = true
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -20,6 +22,8 @@ final class FirstTabViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(tableView)
+        tableView.dataSource = self
+        tableView.delegate = self
 
         setupView()
     }
@@ -31,25 +35,24 @@ final class FirstTabViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
-
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 }
 
 extension FirstTabViewController: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1
+//    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let note = notes[indexPath.row]
         cell.textLabel?.text = note.title
         cell.detailTextLabel?.text = note.content
+        cell.detailTextLabel?.numberOfLines = 3
         return cell
     }
 
