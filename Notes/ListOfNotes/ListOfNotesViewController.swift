@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class FirstTabViewController: UIViewController, ScreenEditViewControllerDelegate {
+final class ListOfNotesViewController: UIViewController, ScreenEditViewControllerDelegate {
     let notebook = FileNotebook()
 
     private var tableView: UITableView = {
@@ -62,7 +62,7 @@ final class FirstTabViewController: UIViewController, ScreenEditViewControllerDe
     }
 }
 
-extension FirstTabViewController: UITableViewDataSource, UITableViewDelegate {
+extension ListOfNotesViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notebook.notes.count

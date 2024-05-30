@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
 
         let tabBar = UITabBarController()
-        let firstTabViewController = FirstTabViewController()
+        let firstTabViewController = ListOfNotesViewController()
         let navigation = UINavigationController(rootViewController: firstTabViewController)
         navigation.tabBarItem = UITabBarItem(title: "Галерея", image: UIImage(systemName: "square.fill"), selectedImage: nil)
         let secondTabViewController = SecondTabViewController()

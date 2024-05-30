@@ -19,7 +19,7 @@
 		2A7CDCEB2B66D40E00492A41 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CDCEA2B66D40E00492A41 /* UIColorExtension.swift */; };
 		2A7CDCED2B66D43B00492A41 /* FileNotebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CDCEC2B66D43B00492A41 /* FileNotebook.swift */; };
 		2AC346BB2B9D09CD00BC869B /* ScreenEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC346BA2B9D09CD00BC869B /* ScreenEditViewController.swift */; };
-		2AD5E9EF2C04BF0000B694D8 /* FirstTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD5E9EE2C04BF0000B694D8 /* FirstTabViewController.swift */; };
+		2AD5E9EF2C04BF0000B694D8 /* ListOfNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD5E9EE2C04BF0000B694D8 /* ListOfNotesViewController.swift */; };
 		2AD5E9F22C04C3DE00B694D8 /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD5E9F12C04C3DE00B694D8 /* SecondTabViewController.swift */; };
 		2AD5E9F52C089A5900B694D8 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD5E9F42C089A5900B694D8 /* CustomCell.swift */; };
 		2AD5E9F82C0921CE00B694D8 /* ScreenEditViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD5E9F72C0921CE00B694D8 /* ScreenEditViewControllerDelegate.swift */; };
@@ -42,7 +42,7 @@
 		2A7CDCEA2B66D40E00492A41 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		2A7CDCEC2B66D43B00492A41 /* FileNotebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNotebook.swift; sourceTree = "<group>"; };
 		2AC346BA2B9D09CD00BC869B /* ScreenEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenEditViewController.swift; sourceTree = "<group>"; };
-		2AD5E9EE2C04BF0000B694D8 /* FirstTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewController.swift; sourceTree = "<group>"; };
+		2AD5E9EE2C04BF0000B694D8 /* ListOfNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfNotesViewController.swift; sourceTree = "<group>"; };
 		2AD5E9F12C04C3DE00B694D8 /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
 		2AD5E9F42C089A5900B694D8 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		2AD5E9F72C0921CE00B694D8 /* ScreenEditViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenEditViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		2AD5E9F62C091BB300B694D8 /* ListOfNotes */ = {
 			isa = PBXGroup;
 			children = (
-				2AD5E9EE2C04BF0000B694D8 /* FirstTabViewController.swift */,
+				2AD5E9EE2C04BF0000B694D8 /* ListOfNotesViewController.swift */,
 				2AD5E9F42C089A5900B694D8 /* CustomCell.swift */,
 			);
 			path = ListOfNotes;
@@ -282,7 +282,7 @@
 				2A7CDCD32B66D11E00492A41 /* SceneDelegate.swift in Sources */,
 				2A7CDCE52B66D35000492A41 /* Note.swift in Sources */,
 				2A7CDCED2B66D43B00492A41 /* FileNotebook.swift in Sources */,
-				2AD5E9EF2C04BF0000B694D8 /* FirstTabViewController.swift in Sources */,
+				2AD5E9EF2C04BF0000B694D8 /* ListOfNotesViewController.swift in Sources */,
 				2A7CDCE92B66D3F200492A41 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
