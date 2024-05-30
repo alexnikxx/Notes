@@ -23,6 +23,8 @@ final class FirstTabViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(tableView)
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonTapped))
+
         tableView.dataSource = self
         tableView.delegate = self
 
@@ -36,6 +38,13 @@ final class FirstTabViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
+    }
+
+    @objc func plusButtonTapped() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController2ID") as? ViewController2 {
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }
 
