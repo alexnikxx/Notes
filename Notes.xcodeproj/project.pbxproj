@@ -22,6 +22,7 @@
 		2AC346BB2B9D09CD00BC869B /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC346BA2B9D09CD00BC869B /* ViewController2.swift */; };
 		2AD5E9EF2C04BF0000B694D8 /* FirstTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD5E9EE2C04BF0000B694D8 /* FirstTabViewController.swift */; };
 		2AD5E9F22C04C3DE00B694D8 /* SecondTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD5E9F12C04C3DE00B694D8 /* SecondTabViewController.swift */; };
+		2AD5E9F52C089A5900B694D8 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD5E9F42C089A5900B694D8 /* CustomCell.swift */; };
 		911EE36691CB6231410581E5 /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9FDD70EC3DB82FEEBAFBD8 /* Pods_Notes.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		2AC346BA2B9D09CD00BC869B /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		2AD5E9EE2C04BF0000B694D8 /* FirstTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewController.swift; sourceTree = "<group>"; };
 		2AD5E9F12C04C3DE00B694D8 /* SecondTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewController.swift; sourceTree = "<group>"; };
+		2AD5E9F42C089A5900B694D8 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		DA9FDD70EC3DB82FEEBAFBD8 /* Pods_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBD6F9ED838BB2105D3FEFF0 /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				2AD5E9EE2C04BF0000B694D8 /* FirstTabViewController.swift */,
+				2AD5E9F42C089A5900B694D8 /* CustomCell.swift */,
 				2AD5E9F12C04C3DE00B694D8 /* SecondTabViewController.swift */,
 			);
 			path = ListOfNotes;
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A7CDCE72B66D3BE00492A41 /* NoteExtension.swift in Sources */,
+				2AD5E9F52C089A5900B694D8 /* CustomCell.swift in Sources */,
 				2A7CDCEB2B66D40E00492A41 /* UIColorExtension.swift in Sources */,
 				2A53DEDA2BA20A2C00F3AAC9 /* CheckboxView.swift in Sources */,
 				2AC346BB2B9D09CD00BC869B /* ViewController2.swift in Sources */,

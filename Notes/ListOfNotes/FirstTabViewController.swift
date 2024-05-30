@@ -13,7 +13,7 @@ final class FirstTabViewController: UIViewController {
     private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.allowsSelection = true
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -22,8 +22,10 @@ final class FirstTabViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(tableView)
+
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.rowHeight = UITableView.automaticDimension
 
         setupView()
     }
@@ -39,20 +41,17 @@ final class FirstTabViewController: UIViewController {
 }
 
 extension FirstTabViewController: UITableViewDataSource, UITableViewDelegate {
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1
-//    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as? CustomCell else {
+            fatalError("The TableView could not dequeue a CustomCell in FirstTabViewController")
+        }
         let note = notes[indexPath.row]
-        cell.textLabel?.text = note.title
-        cell.detailTextLabel?.text = note.content
-        cell.detailTextLabel?.numberOfLines = 3
+        cell.updateCell(note: note)
         return cell
     }
 
