@@ -70,7 +70,7 @@ extension Note {
                 uid: nil,
                 title: "Короткая заметка",
                 content: "Привет",
-                color: UIColor.green,
+                color: UIColor.yellow,
                 importance: Importance.normal,
                 selfDestructionDate: nil
             ),

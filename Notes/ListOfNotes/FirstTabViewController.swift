@@ -61,6 +61,8 @@ extension FirstTabViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController2ID") as? ViewController2 {
+            let note = notes[indexPath.row]
+            viewController.note = note
             self.navigationController?.pushViewController(viewController, animated: true)
             tableView.deselectRow(at: indexPath, animated: false)
         }
