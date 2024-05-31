@@ -24,9 +24,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBar = UITabBarController()
         let firstTabViewController = ListOfNotesViewController()
         let navigation = UINavigationController(rootViewController: firstTabViewController)
-        navigation.tabBarItem = UITabBarItem(title: "Галерея", image: UIImage(systemName: "square.fill"), selectedImage: nil)
-        let secondTabViewController = SecondTabViewController()
-        secondTabViewController.tabBarItem = UITabBarItem(title: "Заметки", image: UIImage(systemName: "square.fill"), selectedImage: nil)
+        navigation.tabBarItem = UITabBarItem(title: "Заметки", image: UIImage(systemName: "square.fill"), selectedImage: nil)
+        let secondTabViewController = PhotoGalleryViewController()
+        secondTabViewController.tabBarItem = UITabBarItem(title: "Галерея", image: UIImage(systemName: "square.fill"), selectedImage: nil)
         tabBar.viewControllers = [navigation, secondTabViewController]
 
         window.rootViewController = tabBar
