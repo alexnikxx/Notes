@@ -13,9 +13,10 @@ final class CustomCollectionViewCell: UICollectionViewCell {
     private let imageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
-        image.image = UIImage(systemName: "🎆")
+        image.image = UIImage(systemName: "1")
         image.tintColor = .white
         image.clipsToBounds = true
+        image.backgroundColor = .white
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
