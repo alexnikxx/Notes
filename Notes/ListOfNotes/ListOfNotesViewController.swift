@@ -24,6 +24,7 @@ final class ListOfNotesViewController: UIViewController, ScreenEditViewControlle
         view.addSubview(tableView)
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", image: nil, target: self, action: #selector(editButtonTapped))
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -53,6 +54,10 @@ final class ListOfNotesViewController: UIViewController, ScreenEditViewControlle
             viewController.delegate = self
             self.navigationController?.pushViewController(viewController, animated: true)
         }
+    }
+
+    @objc func editButtonTapped() {
+        tableView.isEditing.toggle()
     }
 
     func saveNote(note: Note) {
@@ -88,6 +93,14 @@ extension ListOfNotesViewController: UITableViewDataSource, UITableViewDelegate 
             viewController.note = note
             self.navigationController?.pushViewController(viewController, animated: true)
             tableView.deselectRow(at: indexPath, animated: false)
+        }
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let note = notebook.notes[indexPath.row]
+            notebook.remove(with: note.uid)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 }
