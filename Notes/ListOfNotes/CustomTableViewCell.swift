@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CustomCell: UITableViewCell {
+final class CustomTableViewCell: UITableViewCell {
     static let identifier = "CustomCell"
 
     private let color: UIView = {

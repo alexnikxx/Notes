@@ -13,7 +13,7 @@ final class ListOfNotesViewController: UIViewController, ScreenEditViewControlle
     private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.allowsSelection = true
-        tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.identifier)
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -74,7 +74,7 @@ extension ListOfNotesViewController: UITableViewDataSource, UITableViewDelegate 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.identifier, for: indexPath) as? CustomCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {
             fatalError("The TableView could not dequeue a CustomCell in FirstTabViewController")
         }
         let note = notebook.notes[indexPath.row]
