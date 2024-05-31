@@ -29,7 +29,7 @@ final class CustomCell: UITableViewCell {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .body)
         label.textColor = .gray
-        label.numberOfLines = 3
+        label.numberOfLines = 5
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
