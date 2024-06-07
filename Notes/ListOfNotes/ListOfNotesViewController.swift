@@ -57,7 +57,12 @@ final class ListOfNotesViewController: UIViewController, ScreenEditViewControlle
         notebook.add(note)
         self.tableView.reloadData()
         print("Note saved: \(note.title)")
-        print(notebook.notes)
+    }
+
+    func updateNote(note: Note) {
+        notebook.update(note)
+        self.tableView.reloadData()
+        print("Note updated: \(note.title)")
     }
 }
 

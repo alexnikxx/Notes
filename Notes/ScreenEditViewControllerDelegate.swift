@@ -9,4 +9,5 @@ import UIKit
 
 protocol ScreenEditViewControllerDelegate: AnyObject {
     func saveNote(note: Note)
+    func updateNote(note: Note)
 }

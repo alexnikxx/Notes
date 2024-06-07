@@ -87,11 +87,19 @@ final class ScreenEditViewController: UIViewController {
     }
 
     @objc private func buttonSaveTapped() {
-        note = Note(uid: nil, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: colorChoice, importance: .normal, selfDestructionDate: dataPicker.date)
-        if let note = note {
-            delegate?.saveNote(note: note)
-            self.navigationController?.popViewController(animated: true)
+        if note?.uid == nil {
+            note = Note(uid: nil, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: colorChoice, importance: .normal, selfDestructionDate: dataPicker.date)
+            if let note = note {
+                delegate?.saveNote(note: note)
+            }
+        } else {
+            note = Note(uid: self.note?.uid, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: colorChoice, importance: .normal, selfDestructionDate: dataPicker.date)
+            if let note = note {
+                delegate?.updateNote(note: note)
+            }
         }
+
+        self.navigationController?.popViewController(animated: true)
     }
 
     private func editingNote(note: Note) {

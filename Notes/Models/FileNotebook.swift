@@ -19,7 +19,15 @@ class FileNotebook {
             return note.uid == uid
         }
     }
-    
+
+    public func update(_ note: Note) {
+        if let index = notes.firstIndex(where: { $0.uid == note.uid }) {
+            notes[index] = note
+        } else {
+            print("Note not found")
+        }
+    }
+
     public func saveToFile() {
         var url: URL
         
