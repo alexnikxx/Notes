@@ -8,12 +8,12 @@
 import UIKit
 
 final class ListOfNotesViewController: UIViewController, ScreenEditViewControllerDelegate {
-    let notebook = FileNotebook()
+    private let notebook = FileNotebook()
 
     private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.allowsSelection = true
-        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+        tableView.register(NoteTableViewCell.self, forCellReuseIdentifier: NoteTableViewCell.identifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -30,13 +30,6 @@ final class ListOfNotesViewController: UIViewController, ScreenEditViewControlle
         tableView.delegate = self
 
         setupView()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
     }
 
     private func setupView() {
@@ -62,6 +55,7 @@ final class ListOfNotesViewController: UIViewController, ScreenEditViewControlle
 
     func saveNote(note: Note) {
         notebook.add(note)
+        self.tableView.reloadData()
         print("Note saved: \(note.title)")
         print(notebook.notes)
     }
@@ -74,7 +68,7 @@ extension ListOfNotesViewController: UITableViewDataSource, UITableViewDelegate 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NoteTableViewCell.identifier, for: indexPath) as? NoteTableViewCell else {
             fatalError("The TableView could not dequeue a CustomCell in FirstTabViewController")
         }
         let note = notebook.notes[indexPath.row]

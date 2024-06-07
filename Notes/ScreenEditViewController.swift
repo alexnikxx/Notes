@@ -8,9 +8,21 @@
 import UIKit
 
 final class ScreenEditViewController: UIViewController {
-    var checkbox = CheckboxView()
     var note: Note?
-    var colorChoice: UIView?
+    private var checkbox = CheckboxView()
+    private var colorChoice: UIColor? {
+        didSet {
+            if colorChoice == .cyan {
+                firstColor.addSubview(checkbox)
+            } else if colorChoice == .red {
+                secondColor.addSubview(checkbox)
+            } else if colorChoice == .yellow {
+                thirdColor.addSubview(checkbox)
+            } else {
+                forthColor.addSubview(checkbox)
+            }
+        }
+    }
     weak var delegate: ScreenEditViewControllerDelegate?
 
     @IBOutlet weak var dateSwitch: UISwitch!
@@ -26,22 +38,22 @@ final class ScreenEditViewController: UIViewController {
 
     @IBAction func firstColorTapped(_ sender: UITapGestureRecognizer) {
         firstColor.addSubview(checkbox)
-        colorChoice = firstColor
+        colorChoice = firstColor.backgroundColor
     }
 
     @IBAction func secondColorTapped(_ sender: UITapGestureRecognizer) {
         secondColor.addSubview(checkbox)
-        colorChoice = secondColor
+        colorChoice = secondColor.backgroundColor
     }
 
     @IBAction func thirdColorTapped(_ sender: UITapGestureRecognizer) {
         thirdColor.addSubview(checkbox)
-        colorChoice = thirdColor
+        colorChoice = thirdColor.backgroundColor
     }
 
     @IBAction func forthColorTapped(_ sender: UITapGestureRecognizer) {
         forthColor.addSubview(checkbox)
-        colorChoice = forthColor
+        colorChoice = forthColor.backgroundColor
     }
 
     @IBAction func switchChanged(_ sender: UISwitch) {
@@ -75,7 +87,7 @@ final class ScreenEditViewController: UIViewController {
     }
 
     @objc private func buttonSaveTapped() {
-        note = Note(uid: nil, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: setColor(), importance: .normal, selfDestructionDate: dataPicker.date)
+        note = Note(uid: nil, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: colorChoice, importance: .normal, selfDestructionDate: dataPicker.date)
         if let note = note {
             delegate?.saveNote(note: note)
             self.navigationController?.popViewController(animated: true)
@@ -105,18 +117,6 @@ final class ScreenEditViewController: UIViewController {
             thirdColor.addSubview(checkbox)
         } else {
             forthColor.addSubview(checkbox)
-        }
-    }
-
-    private func setColor() -> UIColor {
-        if colorChoice == firstColor {
-            return .cyan
-        } else if colorChoice == secondColor {
-            return .red
-        } else if colorChoice == thirdColor {
-            return .yellow
-        } else {
-            return .blue
         }
     }
 }

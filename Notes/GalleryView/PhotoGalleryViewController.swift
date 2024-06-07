@@ -11,11 +11,15 @@ final class PhotoGalleryViewController: UIViewController {
     private var images = [UIImage]()
 
     private var collectionView: UICollectionView = {
+        let numOfColumn = 3
+        let width = (UIScreen.main.bounds.width - CGFloat((numOfColumn + 1) * 10)) / CGFloat(numOfColumn)
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: width, height: width)
 
-        let collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: layout)
-        collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
@@ -27,7 +31,7 @@ final class PhotoGalleryViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        let imageNames = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+        let imageNames = ["1", "2", "3", "4", "5", "7", "8", "9", "10", "11", "1", "2", "3", "4", "5", "7", "8", "9", "10", "11"]
         appendImage(imageNames)
         setupView()
     }
@@ -43,12 +47,12 @@ final class PhotoGalleryViewController: UIViewController {
         ])
     }
 
-    private func appendImage(_ imageNames: [String]){
-        for imageName in imageNames {
-            if let image = UIImage(named: imageName) {
+    private func appendImage(_ imageNames: [String]) {
+        imageNames.forEach { image in
+            if let image = UIImage(named: image) {
                 images.append(image)
             } else {
-                print("Image named \(imageName) not found")
+                print("Image named \(image) not found")
             }
         }
     }
@@ -60,7 +64,7 @@ extension PhotoGalleryViewController: UICollectionViewDataSource, UICollectionVi
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cells = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell else {
+        guard let cells = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCollectionViewCell.identifier, for: indexPath) as? ImageCollectionViewCell else {
             fatalError("Failed to dequeue CustomCollectionViewCell in HomeViewController")
         }
         let image = images[indexPath.row]
