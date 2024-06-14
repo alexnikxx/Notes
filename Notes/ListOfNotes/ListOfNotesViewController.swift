@@ -21,7 +21,6 @@ final class ListOfNotesViewController: UIViewController, ScreenEditViewControlle
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(tableView)
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", image: nil, target: self, action: #selector(editButtonTapped))
@@ -33,6 +32,8 @@ final class ListOfNotesViewController: UIViewController, ScreenEditViewControlle
     }
 
     private func setupView() {
+        view.addSubview(tableView)
+
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),

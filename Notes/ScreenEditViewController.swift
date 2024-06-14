@@ -15,16 +15,12 @@ final class ScreenEditViewController: UIViewController {
         didSet {
             if colorChoice == firstColor.backgroundColor {
                 firstColor.addSubview(checkbox)
-                print("White")
             } else if colorChoice == secondColor.backgroundColor {
                 secondColor.addSubview(checkbox)
-                print("Red")
             } else if colorChoice == thirdColor.backgroundColor {
                 thirdColor.addSubview(checkbox)
-                print("Yellow")
             } else {
                 forthColor.addSubview(checkbox)
-                print("Green")
             }
         }
     }
@@ -76,8 +72,7 @@ final class ScreenEditViewController: UIViewController {
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", image: nil, target: self, action: #selector(buttonSaveTapped))
 
-        if note != nil {
-            guard let note = note else { return }
+        if let note = note {
             editingNote(note: note)
         } else {
             noteTitleField.placeholder = "Enter title for you note"
@@ -89,14 +84,29 @@ final class ScreenEditViewController: UIViewController {
     }
 
     @objc private func buttonSaveTapped() {
+        guard let text = noteTitleField.text else { return }
+
         if note?.uid == nil {
-            note = Note(uid: nil, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: colorChoice, importance: .normal, selfDestructionDate: dataPicker.isHidden ? nil : dataPicker.date)
+            note = Note(
+                uid: nil,
+                title: text == "" ? "Untitled" : text,
+                content: noteText.text,
+                color: colorChoice,
+                importance: .normal,
+                selfDestructionDate: dataPicker.isHidden ? nil : dataPicker.date
+            )
             if let savedNote = note {
                 delegate?.saveNote(note: savedNote)
             }
         } else {
-            note = Note(uid: self.note?.uid, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: colorChoice, importance: .normal, selfDestructionDate: dataPicker.isHidden ? nil : dataPicker.date)
-            print(note?.color)
+            note = Note(
+                uid: self.note?.uid,
+                title: text == "" ? "Untitled" : text,
+                content: noteText.text,
+                color: colorChoice,
+                importance: .normal,
+                selfDestructionDate: dataPicker.isHidden ? nil : dataPicker.date
+            )
             if let updatedNote = note {
                 delegate?.updateNote(note: updatedNote)
             }
@@ -111,11 +121,9 @@ final class ScreenEditViewController: UIViewController {
         noteText.text = note.content
 
         // switch
-        date = note.selfDestructionDate
-        if date != nil {
-            guard let dateNote = date else { return }
+        if let date = note.selfDestructionDate {
             dateSwitch.isOn = true
-            dataPicker.setDate(dateNote, animated: true)
+            dataPicker.setDate(date, animated: true)
         } else {
             dateSwitch.isOn = false
             dataPicker.isHidden = true
