@@ -9,17 +9,22 @@ import UIKit
 
 final class ScreenEditViewController: UIViewController {
     var note: Note?
+    private var date: Date? = nil
     private var checkbox = CheckboxView()
     private var colorChoice: UIColor? {
         didSet {
-            if colorChoice == .cyan {
+            if colorChoice == firstColor.backgroundColor {
                 firstColor.addSubview(checkbox)
-            } else if colorChoice == .red {
+                print("White")
+            } else if colorChoice == secondColor.backgroundColor {
                 secondColor.addSubview(checkbox)
-            } else if colorChoice == .yellow {
+                print("Red")
+            } else if colorChoice == thirdColor.backgroundColor {
                 thirdColor.addSubview(checkbox)
+                print("Yellow")
             } else {
                 forthColor.addSubview(checkbox)
+                print("Green")
             }
         }
     }
@@ -37,22 +42,18 @@ final class ScreenEditViewController: UIViewController {
     @IBOutlet weak var forthColor: UIView!
 
     @IBAction func firstColorTapped(_ sender: UITapGestureRecognizer) {
-        firstColor.addSubview(checkbox)
         colorChoice = firstColor.backgroundColor
     }
 
     @IBAction func secondColorTapped(_ sender: UITapGestureRecognizer) {
-        secondColor.addSubview(checkbox)
         colorChoice = secondColor.backgroundColor
     }
 
     @IBAction func thirdColorTapped(_ sender: UITapGestureRecognizer) {
-        thirdColor.addSubview(checkbox)
         colorChoice = thirdColor.backgroundColor
     }
 
     @IBAction func forthColorTapped(_ sender: UITapGestureRecognizer) {
-        forthColor.addSubview(checkbox)
         colorChoice = forthColor.backgroundColor
     }
 
@@ -75,27 +76,29 @@ final class ScreenEditViewController: UIViewController {
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", image: nil, target: self, action: #selector(buttonSaveTapped))
 
-        noteTitleField.placeholder = "Enter title for you note"
-
-        firstColor.addSubview(checkbox)
+        if note != nil {
+            guard let note = note else { return }
+            editingNote(note: note)
+        } else {
+            noteTitleField.placeholder = "Enter title for you note"
+            firstColor.addSubview(checkbox)
+        }
 
         checkbox.backgroundColor = .clear
         checkbox.frame = CGRect(x: 36, y: 4, width: 28, height: 28)
-
-        guard let note = note else { return }
-        editingNote(note: note)
     }
 
     @objc private func buttonSaveTapped() {
         if note?.uid == nil {
-            note = Note(uid: nil, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: colorChoice, importance: .normal, selfDestructionDate: dataPicker.date)
-            if let note = note {
-                delegate?.saveNote(note: note)
+            note = Note(uid: nil, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: colorChoice, importance: .normal, selfDestructionDate: dataPicker.isHidden ? nil : dataPicker.date)
+            if let savedNote = note {
+                delegate?.saveNote(note: savedNote)
             }
         } else {
-            note = Note(uid: self.note?.uid, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: colorChoice, importance: .normal, selfDestructionDate: dataPicker.date)
-            if let note = note {
-                delegate?.updateNote(note: note)
+            note = Note(uid: self.note?.uid, title: noteTitleField.text ?? "Untitled", content: noteText.text, color: colorChoice, importance: .normal, selfDestructionDate: dataPicker.isHidden ? nil : dataPicker.date)
+            print(note?.color)
+            if let updatedNote = note {
+                delegate?.updateNote(note: updatedNote)
             }
         }
 
@@ -108,23 +111,17 @@ final class ScreenEditViewController: UIViewController {
         noteText.text = note.content
 
         // switch
-        if let date = note.selfDestructionDate {
+        date = note.selfDestructionDate
+        if date != nil {
+            guard let dateNote = date else { return }
             dateSwitch.isOn = true
-            dataPicker.setDate(date, animated: true)
+            dataPicker.setDate(dateNote, animated: true)
         } else {
             dateSwitch.isOn = false
             dataPicker.isHidden = true
         }
 
         // color
-        if note.color == .cyan {
-            firstColor.addSubview(checkbox)
-        } else if note.color == .red {
-            secondColor.addSubview(checkbox)
-        } else if note.color == .yellow {
-            thirdColor.addSubview(checkbox)
-        } else {
-            forthColor.addSubview(checkbox)
-        }
+        colorChoice = note.color
     }
 }

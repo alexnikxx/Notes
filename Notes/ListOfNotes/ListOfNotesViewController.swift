@@ -90,6 +90,7 @@ extension ListOfNotesViewController: UITableViewDataSource, UITableViewDelegate 
         if let viewController = storyboard.instantiateViewController(withIdentifier: "ScreenEditViewControllerID") as? ScreenEditViewController {
             let note = notebook.notes[indexPath.row]
             viewController.note = note
+            viewController.delegate = self
             self.navigationController?.pushViewController(viewController, animated: true)
             tableView.deselectRow(at: indexPath, animated: false)
         }

@@ -72,7 +72,7 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOR-qE-M3R">
                                                         <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="70" id="JWb-TP-Zq2"/>
@@ -108,7 +108,7 @@
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zJj-Gw-Hsb">
                                                         <rect key="frame" x="222" y="0.0" width="70" height="70"/>
-                                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                         <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="70" id="HGr-XM-mPp"/>
@@ -204,11 +204,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
