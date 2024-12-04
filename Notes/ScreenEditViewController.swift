@@ -89,7 +89,7 @@ final class ScreenEditViewController: UIViewController {
         if note?.uid == nil {
             note = Note(
                 uid: nil,
-                title: text == "" ? "Untitled" : text,
+                title: text.isEmpty ? "Untitled" : text,
                 content: noteText.text,
                 color: colorChoice,
                 importance: .normal,
@@ -101,7 +101,7 @@ final class ScreenEditViewController: UIViewController {
         } else {
             note = Note(
                 uid: self.note?.uid,
-                title: text == "" ? "Untitled" : text,
+                title: text.isEmpty ? "Untitled" : text,
                 content: noteText.text,
                 color: colorChoice,
                 importance: .normal,
