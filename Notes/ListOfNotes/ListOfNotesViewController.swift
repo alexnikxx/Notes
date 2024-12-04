@@ -22,8 +22,18 @@ final class ListOfNotesViewController: UIViewController, ScreenEditViewControlle
         super.viewDidLoad()
         view.backgroundColor = .white
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonTapped))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Edit", image: nil, target: self, action: #selector(editButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .plain,
+            target: self,
+            action: #selector(plusButtonTapped)
+        )
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Edit",
+            image: nil,
+            target: self,
+            action: #selector(editButtonTapped)
+        )
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -78,7 +88,7 @@ extension ListOfNotesViewController: UITableViewDataSource, UITableViewDelegate 
             fatalError("The TableView could not dequeue a CustomCell in FirstTabViewController")
         }
         let note = notebook.notes[indexPath.row]
-        cell.updateCell(note: note)
+        cell.update(note: note)
         return cell
     }
 

@@ -66,7 +66,7 @@ final class NoteTableViewCell: UITableViewCell {
         ])
     }
 
-    func updateCell(note: Note) {
+    func update(note: Note) {
         color.backgroundColor = note.color
         title.text = note.title
         text.text = note.content
