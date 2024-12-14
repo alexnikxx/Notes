@@ -16,15 +16,15 @@ struct Note: Codable {
     let color: UIColor
     let importance: Importance
     let selfDestructionDate: Date?
-    
+
     enum Importance: Int, Decodable {
         case important = 1
         case normal = 2
         case unimportant = 3
     }
-    
+
     private enum CodingKeys: String, CodingKey { case uid, title, content, color, importance, selfDestructionDate }
-    
+
     init(uid: String?, title: String, content: String, color: UIColor?, importance: Importance, selfDestructionDate: Date?) {
         self.uid = uid ?? UUID().uuidString
         self.title = title
@@ -33,7 +33,7 @@ struct Note: Codable {
         self.importance = importance
         self.selfDestructionDate = selfDestructionDate ?? nil
     }
-    
+
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         uid = try container.decode(String.self, forKey: .uid)
@@ -43,7 +43,7 @@ struct Note: Codable {
         importance = try container.decode(Importance.self, forKey: .importance)
         selfDestructionDate = try? container.decode(Date.self, forKey: .selfDestructionDate)
     }
-    
+
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(uid, forKey: .uid)
